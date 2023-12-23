@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Guess a number beetween 1 - 100.</p>
+    <input type="text" id="userinput"><button id="btn">Enter</button>
+    <p id="outputtext"></p>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let output = document.getElementById('outputtext');
+
+        let number = Math.floor(Math.random() * 100)
+
+        btn.addEventListener('click',function(){
+            let input = document.getElementById('userinput').value;
+            if(input == number){
+                output.innerHTML = `Your guessed is right, your number was ${number}`
+            }
+            else if(input < number){
+                output.innerHTML = "Your number iss low"
+            }
+            else{
+                output.innerHTML = "Your number iss hight"
+            }
+        })
+    </script>
+</body>
+</html>
